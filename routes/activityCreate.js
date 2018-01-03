@@ -93,10 +93,10 @@ SoapClient.retrieve(
   else{
     var prop = response.body.Results[0].Properties.Property[1];
     for(key in prop){uid = prop[key];}
-    console.log('debug5',uid);
   }
 });
 
+    console.log('debug5',uid,ckey);
 	
 var webclient = require("request");
  
