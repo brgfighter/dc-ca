@@ -92,12 +92,10 @@ SoapClient.retrieve(
   }
   else{
     var prop = response.body.Results[0].Properties.Property[1];
-    for(key in prop){uid = prop[key];}
-  }
-});
+    for(key in prop){
+	    uid = prop[key];
+	        console.log('debug5',uid,ckey);
 
-    console.log('debug5',uid,ckey);
-	
 var webclient = require("request");
  
 webclient.get({
@@ -108,8 +106,15 @@ webclient.get({
   }
 }, function (error, response, body) {
   console.log(body);
+});		    
+		    
+		    
+		    
+		    }
+  }
 });
-	
+
+
 /*	
 SoapClient.describe(
   'Subscriber',
