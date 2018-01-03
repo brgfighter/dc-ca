@@ -113,11 +113,11 @@ SoapClient.retrieve(
     console.log(err);
   }
   else{
-    var prop = response.body.Results[0].Properties.Property[0];
-   // var matchData = prop.filter(function(item, index){
-   //     if (item.name == "uid") return true;
-//	});
-    console.log('debug5',prop);
+    var prop = response.body.Results[0].Properties.Property;
+    var matchData = prop.filter(function(item, index){
+        if (item.name == "uid") return true;
+	});
+    console.log('debug5',matchData[0].Value);
   }
 });
 	
