@@ -1,0 +1,24 @@
+{
+  "name": "GDO CA",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node app.js"
+  },
+  "author": "SalesForce Marketing Cloud, okamoto Team",
+  "contributors": [
+    "Takashi Okamoto <tokamoto@salesforce.com>"
+  ],  
+  "dependencies": {
+    "express": "~3.5.0",
+    "fuel": "~0.4.1",
+    "fuel-soap": "~1.6.0",
+    "require": "~0.5.0",
+    "jwt-simple": "~0.1.0",
+    "request": "~2.33.0"
+  },
+  "engines": {
+    "node": "6.11.1"
+  },
+  "license": "BSD-3-Clause"
+}
