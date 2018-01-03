@@ -114,10 +114,9 @@ SoapClient.retrieve(
   }
   else{
     var prop = response.body.Results[0].Properties.Property[1];
-   // var matchData = prop.filter(function(item, index){
-    //    if (item.name == "uid") return true;
-	//});
-    console.log('debug5',prop);
+    var uid;
+    for(key in prop){uid = prop[key];}
+    console.log('debug5',uid);
   }
 });
 	
