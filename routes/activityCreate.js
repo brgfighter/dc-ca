@@ -95,49 +95,8 @@ var options = {
   , soapEndpoint: 'https://webservice.s10.exacttarget.com/Service.asmx'
 };
 var SoapClient = new FuelSoap(options);	
-	
-/*	
-	
-var options = {
-  filter: {
-    leftOperand: 'Name',
-    operator: 'equals',
-    rightOperand:  'to'
-  },
-  clientIDs: [{ ID:12345 }]
-};
-
-SoapClient.retrieve(
-  'DataFolder',
-  ["ID"],
-  options,
-  function( err, response ) {
-    if ( err ) {
-      // error here
-      console.log( err );
-      return;
-    }
-
-    // response.body === parsed soap response (JSON)
-    // response.res === full response from request client
-    console.log(response.body);
-  }
-);
-	
-	
-	
-/*	
-var options = {
-  auth: {
-    clientId: '15viko9owr33w8clp268l5c7'
-    , clientSecret: 'J90FCA4OKh1zaRe9vZn4NYTL'
-  }
-  , soapEndpoint: 'https://webservice.s10.exacttarget.com/Service.asmx'
-};
-
-var SoapClient = new FuelSoap(options);
-
-var options = {
+		
+var op = {
   filter: {
     leftOperand: 'Sub_key',
     operator: 'equals',
@@ -152,7 +111,7 @@ var co = {
       ]
   };
 
-SoapClient.retrieve('DataExtensionObject',co,options, function(err, response){
+SoapClient.retrieve('DataExtensionObject',co,op, function(err, response){
   if(err){
     console.log(err);
   }
