@@ -106,14 +106,14 @@ var op = {
 
 SoapClient.retrieve(
 	'DataExtensionObject[TEST_GDO_DE]',
-	["uid"],
+	["Sub_key","uid","ScenarioID"],
 	op,
 	 function(err, response){
   if(err){
     console.log(err);
   }
   else{
-    var prop = response.body.Results[0].Properties.Property[0];
+    var prop = response.body.Results[0].Properties.Property[1];
    // var matchData = prop.filter(function(item, index){
     //    if (item.name == "uid") return true;
 	//});
