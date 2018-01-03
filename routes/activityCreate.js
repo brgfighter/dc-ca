@@ -95,7 +95,7 @@ SoapClient.retrieve(
     for(key in prop){
 	    uid = prop[key];
 	        console.log('debug5',uid,ckey);
-
+if(uid != "uid"){
 var webclient = require("request");
  
 webclient.get({
@@ -107,7 +107,7 @@ webclient.get({
 }, function (error, response, body) {
   console.log(body);
 });		    
-		    
+}		    
 		    
 		    
 		    }
