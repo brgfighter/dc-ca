@@ -96,6 +96,28 @@ var options = {
 };
 var SoapClient = new FuelSoap(options);	
 
+var op = {
+  filter: {
+    leftOperand: 'Sub_key',
+    operator: 'equals',
+    rightOperand: 'tokamoto@salesforce.com'
+  }
+};
+
+SoapClient.retrieve(
+	'DataExtensionObject',
+	["uid","ScenarioID"],
+	op,
+	 function(err, response){
+  if(err){
+    console.log(err);
+  }
+  else{
+    console.log(response.body.Results);
+  }
+});
+	
+/*	
 SoapClient.describe(
   'Subscriber',
   function( err, response ) {
