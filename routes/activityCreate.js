@@ -113,7 +113,7 @@ SoapClient.retrieve(
     console.log(err);
   }
   else{
-    console.log('debug5',response.body);
+    console.log('debug5',response.body.Results[0].Properties);
   }
 });
 	
