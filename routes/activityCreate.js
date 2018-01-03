@@ -48,7 +48,6 @@ exports.validate = function( req, res ) {
  */
 exports.execute = function( req, res ) {
     // Data from the req and put it in an array accessible to the main app.
-    console.log('debug3', req.body.keyValue );
     activityUtils.logData( req );
 
 //	initCase(req,res);
@@ -60,30 +59,9 @@ exports.execute = function( req, res ) {
 			oArgs[key] = aArgs[i][key]; 
 		}
 	}
-
-	var email = oArgs.emailAddress;
-	var uid = req.body.keyValue;
-	var ckey = oArgs.ckey;
-	var scenarioid = oArgs.scenarioid;
+	var ckey = req.body.keyValue;
+	var uid;
 	var priority = oArgs.priority;
-
-console.log('debug',uid,'--',ckey,'--',scenarioid,'--',priority,'---');
-	
-//    uid: "U4c6cc96c2bf1ec1e54894b172b45c537",
-
-	
-var webclient = require("request");
- 
-webclient.get({
-  url: "https://master.laborot.com/api/push",
-  qs: {
-    uid: uid,
-    scenarioid: priority
-  }
-}, function (error, response, body) {
-  console.log(body);
-});
-
 	
 var FuelSoap = require('fuel-soap');
 
@@ -100,7 +78,7 @@ var op = {
   filter: {
     leftOperand: 'Sub_key',
     operator: 'equals',
-    rightOperand: 'tokamoto@salesforce.com'
+    rightOperand: ckey
   }
 };
 
@@ -114,10 +92,22 @@ SoapClient.retrieve(
   }
   else{
     var prop = response.body.Results[0].Properties.Property[1];
-    var uid;
     for(key in prop){uid = prop[key];}
     console.log('debug5',uid);
   }
+});
+
+	
+var webclient = require("request");
+ 
+webclient.get({
+  url: "https://master.laborot.com/api/push",
+  qs: {
+    uid: uid,
+    scenarioid: priority
+  }
+}, function (error, response, body) {
+  console.log(body);
 });
 	
 /*	
