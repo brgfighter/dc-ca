@@ -95,7 +95,26 @@ var options = {
   , soapEndpoint: 'https://webservice.s10.exacttarget.com/Service.asmx'
 };
 var SoapClient = new FuelSoap(options);	
-		
+
+SoapClient.describe(
+  'Subscriber',
+  function( err, response ) {
+    if ( err ) {
+      // error here
+      console.log( err );
+      return;
+    }
+
+    var filtered = response.body.ObjectDefinition.Properties.filter(function(item){
+      return item.IsRetrievable == 'true'
+    })
+    // response.body === parsed soap response (JSON)
+    // response.res === full response from request client
+    console.log( response.body.ObjectDefinition.ExtendedProperties);
+    console.log(filtered);
+  }
+);
+/*	
 var op = {
   filter: {
     leftOperand: 'Sub_key',
