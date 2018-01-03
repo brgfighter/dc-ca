@@ -95,6 +95,9 @@ var options = {
   , soapEndpoint: 'https://webservice.s10.exacttarget.com/Service.asmx'
 };
 var SoapClient = new FuelSoap(options);	
+	
+/*	
+	
 var options = {
   filter: {
     leftOperand: 'Name',
