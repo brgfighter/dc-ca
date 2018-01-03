@@ -105,9 +105,8 @@ var op = {
 };
 
 SoapClient.retrieve(
-	'DataExtensionObject',
-	{"CustomerKey": "TEST_GDO_DE",
-	 "Properties":["uid","ScenarioID"]},
+	'DataExtensionObject[TEST_GDO_DE]',
+	["Sub_key","uid","ScenarioID"],
 	op,
 	 function(err, response){
   if(err){
