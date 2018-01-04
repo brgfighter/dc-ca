@@ -59,8 +59,8 @@ exports.execute = function (req, res) {
   var FuelSoap = require('fuel-soap');
   var options = {
     auth: {
-      clientId: '15viko9owr33w8clp268l5c7',
-      clientSecret: 'J90FCA4OKh1zaRe9vZn4NYTL'
+      clientId: 'vwm3nmjamkq71snoxm72th6d',
+      clientSecret: 'tWTvYVbvcgDcbc7ZHRxGkFPa'
     },
   //エンドポイントはスタックによって変える
     soapEndpoint: 'https://webservice.s10.exacttarget.com/Service.asmx'
