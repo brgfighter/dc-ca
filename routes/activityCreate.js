@@ -59,11 +59,11 @@ exports.execute = function (req, res) {
   var FuelSoap = require('fuel-soap');
   var options = {
     auth: {
-      clientId: 'vwm3nmjamkq71snoxm72th6d',
-      clientSecret: 'tWTvYVbvcgDcbc7ZHRxGkFPa'
+      clientId: '17r5bi0kygayjsxq71e22v2l',
+      clientSecret: 'eMghE1IFDrtIYGPUzXtnZf17'
     },
   //エンドポイントはスタックによって変える
-    soapEndpoint: 'https://webservice.s10.exacttarget.com/Service.asmx'
+    soapEndpoint: 'https://webservice.s4.exacttarget.com/Service.asmx'
   };
   var SoapClient = new FuelSoap(options);
   var op = {
@@ -75,7 +75,7 @@ exports.execute = function (req, res) {
   };
   SoapClient.retrieve(
     //DEの構成通りに配列を記述すること。DEのカスタムキーをDE名と同じにしておくこと、
-    'DataExtensionObject[TEST_GDO_DE]', ["Sub_key", "uid", "ScenarioID"], op,
+    'DataExtensionObject[TEST_DOCOMO_DE]', ["Sub_key", "uid", "ScenarioID"], op,
     function (err, response) {
       if (err) {
         console.log(err);
@@ -86,7 +86,7 @@ exports.execute = function (req, res) {
           if (uid != "uid") {　　　　　　
             var webclient = require("request");　
             webclient.get({　　
-              url: "https://master.laborot.com/api/push",
+              url: "https://test-master.laborot.com/api/push",
               qs: {
                 uid: uid,
                 scenarioid: priority
