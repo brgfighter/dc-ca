@@ -8,22 +8,22 @@
     "type": "REST",
     "lang": {
         "en-US": {
-            "name": "LINEメッセージ送信",
-            "description": "GDO Send LINE Messages"
+            "name": "double click LIST送信",
+            "description": "Send DoubleClick List"
         }
     },
     "arguments": {
         "execute": {       
 	    "inArguments":[
 				{ "uid":"U4c6cc96c2bf1ec1e54894b172b45c537"},
- 				{ "scenarioid":"{{Contact.Attribute.TEST_GDO_DE2.ScenarioID}}"},
+ 				{ "scenarioid":"{{Contact.Attribute.TEST_DOCOMO_DE.ScenarioID}}"},
  				{ "ckey":"{{Contact.Key}}"},		    
  				{ "emailAddress": "{{Contact.Default.Email}}"}	
 	    ],
             "outArguments": [
             	{ "caseID":"number" }
 			],			
-			"url": "https://gdo-ca3.herokuapp.com/ixn/activities/create-case/execute/",
+			"url": "https://dc-ca.herokuapp.com/ixn/activities/create-case/execute/",
             "verb": "POST",
             "body": "",
             "header": "",
@@ -36,26 +36,26 @@
     	"applicationExtensionKey": "dfa995d9-d024-4b84-95ce-cc10a3e35d90",
         "defaults": { "priority": "22"},             
         "save": {
-        	"url": "https://gdo-ca3.herokuapp.com/ixn/activities/create-case/save/",
+        	"url": "https://dc-ca.herokuapp.com/ixn/activities/create-case/save/",
             "body": "",
             "verb": "POST",
             "useJwt": false
         },
         "publish": {
-        	"url": "https://gdo-ca3.herokuapp.com/ixn/activities/create-case/publish/",
+        	"url": "https://dc-ca.herokuapp.com/ixn/activities/create-case/publish/",
             "verb": "POST",
             "body": "",
             "useJwt": false
         },
         "validate": {
-        	"url": "https://gdo-ca3.herokuapp.com/ixn/activities/create-case/validate/",
+        	"url": "https://dc-ca.herokuapp.com/ixn/activities/create-case/validate/",
             "verb": "POST",
             "body": "",
             "useJwt": false            
         }
     },
     "edit": {
-    	"url": "https://gdo-ca3.herokuapp.com/ixn/activities/create-case/",
+    	"url": "https://dc-ca.herokuapp.com/ixn/activities/create-case/",
         "height": 400,
         "width": 500
     }
